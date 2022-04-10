@@ -1,0 +1,46 @@
+<?php
+/*
+ Author:AroRain(MoeLuoYu)
+ This is free software,but you can use it for business.
+ $ id: FileShareSystem_lang_en_us 2022-4-10 CST MoeLuoYu $
+ This translations made by MoeLuoYu
+*/
+
+// index.php
+define("notperm", "You are not authorized to access the current directory");
+define("no", "This folder is empty.");
+define("disksize", "Disk Capacity");
+define("freesize", "Available Space");
+define("up", "Back to the top");
+define("viewdir", "View Catalog");
+define("cancel", "Cancel");
+define("all", "Select All");
+define("dirlist", "Catalog List");
+define("viewfile", "View");
+define("download", "Download");
+// template.php
+define("cop", "All Right Reserved");
+// 404.php
+define("notfound", "Not Found");
+// view.php
+define("view", "View File");
+define("backdir", "Back to Catalog");
+define("errtip", "Error Tip");
+define("noreadperm", "You do not have read access to this file!");
+define("code", "Encode");
+define("nom", "Missing modules");
+define("reopen", "Reopen by code");
+define("interview", "Content Browse");
+define("big", "The file is too big, please download it and check it out!");
+define("nullpoint", "The file cannot be opened or the file content is empty!");
+//file.php
+define("fileinfo", "File Info");
+define("filename", "File Name");
+define("sizefile", "File Size");
+define("mime", "File Type");
+define("latest", "Last visit");
+define("latestedit", "Final Edit");
+define("md5hash", "File Validation");
+define("md5value", "MD5 hash of the file");
+define("sha1value", "SHA1 hash of the file");
+?>

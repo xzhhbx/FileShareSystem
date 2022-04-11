@@ -1,8 +1,8 @@
 <?php
 /*
  Author:AroRain(MoeLuoYu)
- This is free software,but you can use it for business.
- $ id: FileShareSystem_config 2022-4-10 CST MoeLuoYu $
+ This is free software,do not use it for business.
+ $ id: FileShareSystem_config 2022-4-11 CST MoeLuoYu $
 */
 //服务器会话
 session_start();
@@ -18,6 +18,8 @@ define("NAME", "FileShareSystem");
 define("SUBNAME", " ");
 //网站底部版权
 define("COPYNAME", "FileShareSystem");
+//网站底部版权年份
+define("COPYEAR", "2022");
 //网站版权指向URL
 define("URLSITE", "http://".$_SERVER['SERVER_NAME']);
 //网站根目录

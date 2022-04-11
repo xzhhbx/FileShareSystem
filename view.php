@@ -1,7 +1,7 @@
 <?php
 /*
  Author:AroRain(MoeLuoYu)
- This is free software,but you can use it for business.
+ This is free software,do not use it for business.
  $ id: FileShareSystem_view 2022-4-10 CST MoeLuoYu $
 */
 //import
@@ -34,7 +34,7 @@ if (!isset($_GET['path'])) {
     echo "<div class=\"like\">\n";
     echo "{$errtip}";
     echo "</div>\n";
-    echo "<div class=\"love\">\n";
+    echo "<div class=\"rain\">\n";
     echo "{$noreadprem}";
     echo "</div>\n";
     xhtml_footer();
@@ -44,7 +44,7 @@ if (!isset($_GET['path'])) {
     echo "<div class=\"like\">\n";
     echo "{$code}\n";
     echo "</div>\n";
-    echo "<div class=\"love\">";
+    echo "<div class=\"rain\">";
     echo "<form action=\"\" method=\"GET\">\n";
     echo "<select name=\"charset\">\n";
     if (!function_exists("mb_convert_encoding")) {
@@ -82,15 +82,15 @@ if (!isset($_GET['path'])) {
     echo "</div>\n";
     echo "<div class=\"like\">{$interview}</div>\n";
     if (filesize($path) > (2 * 1024 * 1024)) {
-        echo "<div class=\"love\">\n";
+        echo "<div class=\"rain\">\n";
         echo "{$big}\n";
         echo "</div>\n";
     } else {
-        echo "<div class=\"love\">\n";
+        echo "<div class=\"rain\">\n";
         if (!($data = file_get_contents($path))) {
             echo "{$nullpoint}\n";
         } else {
-            echo "<pre>";
+            echo "<pre><code class=\"auto\">";
             if (!isset($_GET['charset'])) {
                 echo nl2br(___codepre(___convert($data, "UTF-8")));
             } elseif (($charset = trim($_GET['charset'])) == "") {
@@ -98,7 +98,7 @@ if (!isset($_GET['path'])) {
             } else {
                 echo nl2br(___codepre(___convert($data, "UTF-8", $charset)));
             }
-            echo "<pre>\n";
+            echo "</code></pre>\n";
         }
         echo "</div>";
     }

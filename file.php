@@ -1,7 +1,7 @@
 <?php
 /*
  Author:AroRain(MoeLuoYu)
- This is free software,but you can use it for business.
+ This is free software,do not use it for business.
  $ id: FileShareSystem_file 2022-4-10 CST MoeLuoYu $
 */
 //import
@@ -37,7 +37,7 @@ if (!($data = $fs->getpath($path))) {
     echo "<div class=\"like\">\n";
     echo "{$fileinfo}\n";
     echo "</div>\n";
-    echo "<div class=\"love\">\n";
+    echo "<div class=\"rain\">\n";
     echo "{$filename}：" . ___basename($path) . "<br />\n";
     echo "{$sizefile}：" . ___filesize($data['size']) . "<br />\n";
     if (function_exists("mime_content_type")) echo "{$mime}：" . mime_content_type($path) . "<br />\n";
@@ -45,7 +45,7 @@ if (!($data = $fs->getpath($path))) {
     echo "{$latestedit}：" . gmdate("Y-m-d H:i:s", ($data['mtime']) + TIME) . "<br />\n";
     echo "</div>\n";
     echo "<div class=\"like\">\n{$md5hash}\n</div>\n";
-    echo "<div class=\"love\">\n";
+    echo "<div class=\"rain\">\n";
     echo "md5：";
     if (isset($_GET['md5'])) {
         echo "<br />" . md5_file($path);
@@ -53,7 +53,7 @@ if (!($data = $fs->getpath($path))) {
         echo "<a href=\"./file.php?{$_SERVER['QUERY_STRING']}&md5\">{$md5value}</a>\n";
     }
     echo "</div>\n";
-    echo "<div class=\"love\">\n";
+    echo "<div class=\"rain\">\n";
     echo "sha1：";
     if (isset($_GET['sha1'])) {
         echo "<br />" . sha1_file($path);

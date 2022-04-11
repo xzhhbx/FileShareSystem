@@ -1,9 +1,8 @@
 <?php
 /*
  Author:AroRain(MoeLuoYu)
- This is free software,but you can use it for business.
- $ id: FileShareSystem_lang_zh_cn 2022-4-10 CST MoeLuoYu $
- This translations made by MoeLuoYu
+ This is free software,do not use it for business.
+ $ id: FileShareSystem_lang_zh_cn 2022-4-11 CST MoeLuoYu $
 */
 
 // index.php
@@ -11,13 +10,15 @@ define("notperm", "您无权访问当前目录");
 define("no", "此文件夹为空。");
 define("disksize", "磁盘容量");
 define("freesize", "可用空间");
-define("up", "返回上级");
+define("up", "返回首页");
 define("viewdir", "查看目录");
 define("cancel", "取消");
 define("all", "全选");
 define("dirlist", "目录列表");
 define("viewfile", "查看");
 define("download", "下载");
+define("updatetime", "更新时间");
+define("backtop", "返回上页");
 // template.php
 define("cop", "版权所有");
 // 404.php

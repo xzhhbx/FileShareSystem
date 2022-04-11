@@ -6,6 +6,8 @@
 */
 //服务器会话
 session_start();
+//原作者名称 WARN:为保证原作者的权益请不要删除下面一段文字
+define("author", "MoeLuoYu(AroRain落雨)");
 //错误的屏蔽
 error_reporting(0);
 //时间戳修正

@@ -1,8 +1,8 @@
 <?php
 /*
  Author:AroRain(MoeLuoYu)
- This is free software,but you can use it for business.
- $ id: FileShareSystem_essentials 2022-4-10 CST MoeLuoYu $
+ This is free software,do not use it for business.
+ $ id: FileShareSystem_essentials 2022-4-11 CST MoeLuoYu $
 */
 function ___codepre()
 {
@@ -95,7 +95,7 @@ function ___basename()
     $path = explode("/", $path);
     return ___convert($path[count($path) - 1]);
 }
-//未使用但已实现 可以调用
+//未使用但已实现 可以调用 返回出真实的文件路径
 function ___realpath()
 {
     $path = func_get_arg(0);
@@ -130,8 +130,7 @@ function ___shortpath()
         if (strlen($path) <= 18) return $path;
     }
     $path1 = function_exists('mb_substr') ? mb_substr($path, -9, 9, "UTF-8") : substr($path, -9);
-    $path2 = function_exists('mb_substr') ? mb_substr($path, 0, 9, "UTF-8") : substr($path, 0, 9);
-    return $path1;
+    return "Index of/"."...".$path1;
 }
 
 ?>

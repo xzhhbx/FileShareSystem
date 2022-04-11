@@ -1,8 +1,8 @@
 <?php
 /*
  Author:AroRain(MoeLuoYu)
- This is free software,but you can use it for business.
- $ id: FileShareSystem_index 2022-4-10 CST MoeLuoYu $
+ This is free software,do not use it for business.
+ $ id: FileShareSystem_index 2022-4-11 CST MoeLuoYu $
 */
 //import
 require "./include/config.php";
@@ -19,6 +19,10 @@ $all = all;
 $dirlist = dirlist;
 $viewfile = viewfile;
 $download = download;
+$latest = latest;
+$latestedit = latestedit;
+$updatetime = updatetime;
+$backtop = backtop;
 //main
 $path = isset($_GET['path']) ? trim($_GET['path']) : OPEN;
 if ($path == "" || !is_dir($path)) $path = OPEN;
@@ -28,7 +32,7 @@ echo "<div class=\"love\">\n";
 if (function_exists("disk_total_space") && function_exists("disk_free_space")) {
     echo "{$disksize}:" . ___filesize(disk_total_space($path)) . "&ensp;&ensp;{$freesize}:" . ___filesize(disk_free_space($path)) . "<br />";
 }
-echo "{$viewdir}:[<a href=\"?path=" . urlencode("/..") . "$multiple\">{$up}</a>]&ensp;&ensp;"."/".___shortpath($path);
+echo "[<a href=\"?path=" . urlencode(___realpath(dirname(getcwd(),1))) . "$multiple\">{$up}</a>][<a href=\"javascript:;\" onClick=\"javascript :history.back(-1);\">$backtop</a>]&ensp;&ensp;{$viewdir}:".___shortpath($path);
 echo "\n</div>\n";
 if (($data = $filesystem->getpath()) === false) {
     echo "<div class=\"error\">{&notperm}</div>\n";
@@ -42,8 +46,8 @@ if (($data = $filesystem->getpath()) === false) {
     echo "<div class=\"love\">\n";
     echo "(<a href=\"?path=" . urlencode($path) . "&select$multiple\">{$all}</a>|<a href=\"?path=" . urlencode($path) . "$multiple\">{$cancel}</a>)\n";
     echo "</div>\n";
+    echo "\n<div class=\"like\">{$dirlist}</div>\n";
     if (count($data[0]) != 0) {
-        echo "\n<div class=\"like\">{$dirlist}</div>\n";
         foreach ($data[0] as $tmp) {
             $filesystem->chpath($tmp);
             echo "<div class=\"love\">\n";
@@ -52,6 +56,7 @@ if (($data = $filesystem->getpath()) === false) {
             echo "</div>\n";
         }
     }
+    $fs = new filesystem($path);
     if (count($data[1]) != 0) {
         foreach ($data[1] as $tmp) {
             $filesystem->chpath($tmp);
@@ -59,6 +64,7 @@ if (($data = $filesystem->getpath()) === false) {
             echo "<div class=\"love\">\n";
             echo "<input type=\"checkbox\" name=\"flist[]\" value=\"" . urlencode($tmp) . "\" $select/>\n";
             echo "<a href=\"./file.php?path=" . urlencode($tmp) . "\">" . ___basename($tmp) . "</a>(" . ___filesize($iget['size']) . ")\n";
+            echo "&nbsp&nbsp&nbsp";
             echo "<a href=\"./include/download.php?path=" . urlencode($tmp) . "\">{$download}</a>|";
             echo "<a href=\"./view.php?path=" . urlencode($tmp) . "\">{$viewfile}</a>";
             echo "</div>\n";

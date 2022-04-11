@@ -1,8 +1,8 @@
 <?php
 /*
  Author:AroRain(MoeLuoYu)
- This is free software,but you can use it for business.
- $ id: FileShareSystem_template 2022-4-10 CST MoeLuoYu $
+ This is free software,do not use it for business.
+ $ id: FileShareSystem_template 2022-4-11 CST MoeLuoYu $
 */
 function xhtml_head()
 {
@@ -15,7 +15,7 @@ function xhtml_head()
  <head> 
   <title>{$name} {$subname}</title> 
   <link rel="shortcut icon" href="{$icon}" type="image/x-icon" /> 
-  <link rel="stylesheet" href="./static/style/style.css" /> 
+  <link rel="stylesheet" href="./static/style/style.css" />
  </head> 
  <body> 
   <div id="header">
@@ -32,12 +32,13 @@ function xhtml_footer()
     $urlsite = URLSITE;
     $cop = cop;
     $copyname = COPYNAME;
+    $copyear = COPYEAR;
     echo <<<XHTML
 <html>
  <head></head>
  <body>
   <div id="footer">
-    &copy;2020-2022 <a href="{$urlsite}">{$copyname}</a> {$cop}
+    &copy;{$copyear} <a href="{$urlsite}">{$copyname}</a> {$cop}
   </div>  
  </body>
 </html>

@@ -1,9 +1,8 @@
 <?php
 /*
  Author:AroRain(MoeLuoYu)
- This is free software,but you can use it for business.
- $ id: FileShareSystem_lang_en_us 2022-4-10 CST MoeLuoYu $
- This translations made by MoeLuoYu
+ This is free software,do not use it for business.
+ $ id: FileShareSystem_lang_zh_cn 2022-4-11 CST MoeLuoYu $
 */
 
 // index.php
@@ -11,13 +10,15 @@ define("notperm", "You are not authorized to access the current directory");
 define("no", "This folder is empty.");
 define("disksize", "Disk Capacity");
 define("freesize", "Available Space");
-define("up", "Back to the top");
+define("up", "Back To Home");
 define("viewdir", "View Catalog");
 define("cancel", "Cancel");
 define("all", "Select All");
 define("dirlist", "Catalog List");
 define("viewfile", "View");
 define("download", "Download");
+define("updatetime", "Update Time");
+define("backtop", "Back To Top");
 // template.php
 define("cop", "All Right Reserved");
 // 404.php
